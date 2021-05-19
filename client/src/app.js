@@ -53,7 +53,7 @@ function App() {
                 <QueryResults results={results} save={commitSave} />
               </Route>
               <Route exact path="/saved">
-                <SavedList favBook={favBook} commitDelete={bookDelete} />
+                <Favorite favBook={favBook} commitDelete={bookDelete} />
               </Route>
             </Switch>
           </Router>
