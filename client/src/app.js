@@ -50,7 +50,7 @@ function App() {
                 updateSelect={updateSelect}
                 searchGBooksAPI={searchGBooksAPI}
                 />
-                <QueryResults results={results} save={commitSave} />
+                <Results results={results} save={commitSave} />
               </Route>
               <Route exact path="/saved">
                 <Favorite favBook={favBook} commitDelete={bookDelete} />
