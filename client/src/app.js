@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import API from "./utils/API";
+import API from "./util/api";
 import NavBar from "./components/NavBar";
 import SearchForm from "./components/SearchForm";
 import Results from "./components/Results";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Favorite from "./pages/Favorite";
+import Favorite from "./Pages/Favorite";
 
 function App() {
     const [params, setParams] = useState({ search: "", type: "" });
@@ -38,7 +38,7 @@ function App() {
     
         await API.getBooks().then((books) => setFavBook(books.data));
     
-         console.log(bookList);
+         console.log(favBook);
       };
 
     const bookDelete = async (id) => {
