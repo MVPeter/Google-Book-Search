@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import API from "./utils/API";
 import NavBar from "./components/NavBar";
 import SearchForm from "./components/SearchForm";
-import QueryResults from "./components/QueryResults";
+import Results from "./components/Results";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SavedList from "./pages/SavedList";
+import Favorite from "./pages/Favorite";
 
 function App() {
     const [params, setParams] = useState({ search: "", type: "" });
@@ -19,7 +19,7 @@ function App() {
         setParams({ ...params, [e.target.name]: e.target.value });
     };
 
-    const updateType = (e) => {
+    const updateSelect = (e) => {
         setParams({ ...params, [e.target.name]: e.target.value });
     };
 
@@ -32,6 +32,14 @@ function App() {
             });
         }
     };
+
+    const bookSave = async (obj) => {
+        await API.saveBook(obj);
+    
+        await API.getBooks().then((books) => setFavBook(books.data));
+    
+         console.log(bookList);
+      };
 
     const bookDelete = async (id) => {
         await API.removeBook(id);
@@ -50,9 +58,9 @@ function App() {
                 updateSelect={updateSelect}
                 searchGBooksAPI={searchGBooksAPI}
                 />
-                <Results results={results} save={commitSave} />
+                <Results results={results} bookSave={bookSave} />
               </Route>
-              <Route exact path="/saved">
+              <Route exact path="/favorite">
                 <Favorite favBook={favBook} commitDelete={bookDelete} />
               </Route>
             </Switch>
@@ -60,3 +68,5 @@ function App() {
         </div>
       );
     }
+
+export default App;
