@@ -4,6 +4,6 @@ const gBooksRoutes = require("./gbooks");
 
 // Book routes
 router.use("/books", bookRoutes);
-router.use("gbooks", gBooksRoutes)
+router.use("/gbooks", gBooksRoutes)
 
 module.exports = router;

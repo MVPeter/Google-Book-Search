@@ -9,7 +9,7 @@ const NavBar = () => {
   
           <div className='navbar-header'>
             <Link to="/" className="navbar-brand">
-              Google Books search and ave
+              Google Books search
         </Link>
           </div>
           <ul className="nav navbar-nav">

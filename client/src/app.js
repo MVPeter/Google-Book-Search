@@ -25,8 +25,10 @@ function App() {
 
     const searchGBooksAPI = (e) => {
         e.preventDefault();
-        if (params.updateSearch !== "" && params.updateSelect !== "") {
-            API.search(params.updateSelect, params.updateSearch).then((response) => {
+        console.log (params)
+        if (params.search !== "" && params.type !== "") {
+            API.search(params.type, params.search).then((response) => {
+                console.log("response", response)
                 console.log("results ", response.data.items);
                 setResults(response.data.items);
             });

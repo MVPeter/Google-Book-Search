@@ -10,7 +10,7 @@ const SearchForm = (props) => {
                         <div className="form-row">
                             <div className="form-group col-md-3">
                                 <select
-                                    name="updateSelect"
+                                    name="type"
                                     className="form-control"
                                     onChange={props.updateSelect}
                                 >
@@ -24,7 +24,7 @@ const SearchForm = (props) => {
                                     type="text"
                                     className="form-control"
                                     placeholder="Search Text"
-                                    name="updateSearch"
+                                    name="search"
                                     onChange={props.updateSearch}
                                 />
                             </div>
