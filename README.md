@@ -19,6 +19,8 @@
 
   This webpage uses Googlebooks api to search for books by Title or Author.  You can then save the information to a MongoDB for later retreiveal.
 
+![ScreenShot](./screenshot/screenshot.png)
+
   ---
   
   ## Installation
