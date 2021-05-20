@@ -17,7 +17,7 @@ const Results = (props) => {
                             : "https://cdn.onlinewebfonts.com/svg/img_148071.png"
                         }
                         alt="Book Cover preview"
-                        />
+                        ></img>
                         <div className="col-sm-10">
                             <h4 className="card-title">{element.volumeInfo.title}</h4>
                             <h5>
@@ -40,7 +40,7 @@ const Results = (props) => {
                             >
                                 Link to More info
                             </a>
-                            <br />
+                            <br></br>
                             <button
                             className="btn btn-primary mx-3"
                             onClick={() => {

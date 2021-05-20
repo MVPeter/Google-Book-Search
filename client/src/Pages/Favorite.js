@@ -13,7 +13,7 @@ const Favorite = (props) => {
                             style={{ maxHeight: "13rem", maxWidth: "10rem" }}
                             src={element.image}
                             alt="Book cover preview"
-                        />
+                        ></img>
                         <div className="col-sm-10">
                             <h5 className="card-title">{element.title}</h5>
                             <p>

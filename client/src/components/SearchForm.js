@@ -26,7 +26,7 @@ const SearchForm = (props) => {
                                     placeholder="Search Text"
                                     name="search"
                                     onChange={props.updateSearch}
-                                />
+                                ></input>
                             </div>
                             <div className="form-group col-md-2">
                                 <button
