@@ -18,7 +18,14 @@ app.use(routes);
 dotenv.config()
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@clusters.e9lva.mongodb.net/gbooksearchlist?retryWrites=true&w=majority`);
+mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@clusters.e9lva.mongodb.net/gbooksearchlist?retryWrites=true&w=majority`,
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+}
+);
 
 // Start the API server
 app.listen(PORT, function() {
