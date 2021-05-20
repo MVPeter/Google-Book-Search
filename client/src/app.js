@@ -13,7 +13,7 @@ function App() {
 
     useEffect(() => {
         API.getBooks().then((books) => setFavBook(books.data));
-    });
+    }, []);
 
     const updateSearch = (e) => {
         setParams({ ...params, [e.target.name]: e.target.value });
@@ -44,6 +44,7 @@ function App() {
       };
 
     const bookDelete = async (id) => {
+      console.log(id)
         await API.removeBook(id);
     
         await API.getBooks().then((books) => setFavBook(books.data));
@@ -63,7 +64,7 @@ function App() {
                 <Results results={results} bookSave={bookSave} />
               </Route>
               <Route exact path="/favorite">
-                <Favorite favBook={favBook} commitDelete={bookDelete} />
+                <Favorite favBook={favBook} bookDelete={bookDelete} />
               </Route>
             </Switch>
           </Router>

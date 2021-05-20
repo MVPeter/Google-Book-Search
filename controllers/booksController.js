@@ -3,6 +3,7 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
+    console.log("findall")
     db.Book
       .find(req.query)
       .sort({ date: -1 })
@@ -11,6 +12,8 @@ module.exports = {
   },
 
   create: function(req, res) {
+    console.log("create")
+    console.log(req.body)
     db.Book
       .create({
         title: req.body.title,
@@ -24,6 +27,7 @@ module.exports = {
   },
 
   remove: function(req, res) {
+    console.log("remove")
     db.Book
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
