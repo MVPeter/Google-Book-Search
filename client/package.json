@@ -25,7 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://mvpeter.github.io/Google-Book-Search/",
+  "homepage": "https://gbookfav.herokuapp.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
